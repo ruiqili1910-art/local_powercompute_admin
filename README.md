@@ -1,16 +1,354 @@
-# React + Vite
+# CMS 内容管理系统 - 管理后台
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+一个功能完善的企业级内容管理系统（CMS）管理后台，基于 React + Vite 构建，提供直观的界面和强大的内容管理功能。
 
-Currently, two official plugins are available:
+## 📋 项目简介
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+本项目是一个企业级 CMS 管理后台系统，支持多模块内容管理，包括公司信息、新闻动态、业务展示、品牌文化、党建领航、人力资源、企业公开、可持续发展等模块。系统采用现代化的前端技术栈，提供流畅的用户体验和强大的功能扩展能力。
 
-## React Compiler
+## ✨ 核心特性
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🎯 功能模块
 
-## Expanding the ESLint configuration
+- **全局资源库**
+  - 公司档案信息管理
+  - 图片媒体库
+  - 资质荣誉库
+  - 人员专家库
+  - 页脚内容管理
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **首页管理**
+  - Banner 设置
+  - 最新动态
+  - 关于我们
+  - 业务板块
+  - 社会责任与文化
+  - 员工风采
+  - 合作伙伴
+
+- **关于我们**
+  - Banner 设置
+  - 公司简介
+  - 发展历程
+  - 董事长致辞
+  - 公司领导
+  - 荣誉资质
+
+- **新闻中心**
+  - Banner 设置
+  - 公司要闻
+  - 企业新闻
+  - 项目动态
+  - 行业信息
+
+- **业务领域**
+  - Banner 设置
+  - 工程承包
+  - 项目总览
+  - 实业投资
+  - 国际贸易
+
+- **品牌文化**
+  - Banner 设置
+  - 企业文化
+  - 品牌形象
+
+- **党建领航**
+  - Banner 设置
+  - 党的建设
+  - 廉洁从业
+  - 青年之友
+  - 职工之家
+
+- **人力资源**
+  - Banner 设置
+  - 人才战略
+  - 人才队伍
+  - 招聘信息
+
+- **企业公开**
+  - Banner 设置
+  - 基本信息
+  - 经营管理重大事项
+  - 联系方式
+  - 子公司情况
+
+- **可持续发展**
+  - Banner 设置
+  - 科技创新
+  - 安环行动
+  - 全球发展
+  - 社会责任
+  - ESG 报告
+
+- **系统管理**
+  - 用户权限管理
+  - 部门权限管理
+  - 成员管理
+
+### 🚀 核心功能
+
+- ✅ **保存与发布机制**：支持内容保存和发布分离，确保内容审核流程
+- ✅ **历史记录管理**：完整的内容修改历史记录，支持版本恢复
+- ✅ **实时预览**：支持全屏预览功能，实时查看内容效果
+- ✅ **响应式设计**：完美适配桌面端和移动端
+- ✅ **未保存提醒**：智能检测未保存修改，防止数据丢失
+- ✅ **资源库管理**：统一的图片、资质、人员等资源库管理
+- ✅ **富文本编辑**：支持富文本内容编辑
+- ✅ **图片选择器**：便捷的图片选择和管理功能
+
+## 🛠️ 技术栈
+
+### 核心技术
+
+- **React 19.2.0** - 现代化的 UI 框架
+- **Vite 7.2.5** - 快速的前端构建工具（基于 Rolldown）
+- **Tailwind CSS 3.4.16** - 实用优先的 CSS 框架
+- **Lucide React** - 现代化的图标库
+
+### 开发工具
+
+- **ESLint** - 代码质量检查
+- **PostCSS** - CSS 后处理器
+- **Autoprefixer** - CSS 自动前缀
+
+## 📁 项目结构
+
+```
+local_powercompute_admin/
+├── docs/                          # 项目文档
+│   ├── 产品使用说明书.md
+│   ├── 产品设计提示词.md
+│   ├── 历史记录功能说明.md
+│   └── 开发日志.md
+├── src/
+│   ├── components/                # 组件目录
+│   │   ├── common/                # 通用组件
+│   │   ├── editors/               # 编辑器组件
+│   │   │   ├── permissions/       # 权限管理组件
+│   │   │   └── ...                # 各模块编辑器
+│   │   ├── preview/               # 预览组件
+│   │   └── ui/                    # UI 基础组件
+│   │       ├── Button.jsx
+│   │       ├── Card.jsx
+│   │       ├── DataTable.jsx
+│   │       ├── FormItem.jsx
+│   │       ├── Input.jsx
+│   │       ├── Modal.jsx
+│   │       ├── RichTextEditor.jsx
+│   │       └── ...
+│   ├── constants/                 # 常量定义
+│   │   └── initialData.js
+│   ├── contexts/                  # React Context
+│   │   └── UnsavedChangesContext.jsx
+│   ├── App.jsx                    # 主应用组件
+│   ├── App.css                    # 全局样式
+│   ├── index.css                  # 入口样式
+│   └── main.jsx                   # 应用入口
+├── .cursor/                       # Cursor 配置
+│   └── rules/                     # 开发规范
+│       ├── designrule/            # 设计规范
+│       └── component-development.md
+├── public/                        # 静态资源
+├── dist/                          # 构建输出
+├── package.json                   # 项目配置
+├── vite.config.js                 # Vite 配置
+├── tailwind.config.js             # Tailwind 配置
+└── README.md                      # 项目说明
+```
+
+## 🚀 快速开始
+
+### 环境要求
+
+- Node.js >= 18.0.0
+- npm >= 9.0.0 或 yarn >= 1.22.0
+
+### 安装依赖
+
+```bash
+npm install
+```
+
+### 开发模式
+
+```bash
+npm run dev
+```
+
+启动后，访问 `http://localhost:5173` 查看应用。
+
+### 构建生产版本
+
+```bash
+npm run build
+```
+
+构建产物将输出到 `dist/` 目录。
+
+### 预览生产构建
+
+```bash
+npm run preview
+```
+
+### 代码检查
+
+```bash
+npm run lint
+```
+
+## 🎨 设计规范
+
+项目严格遵循统一的设计规范，确保界面一致性和用户体验。
+
+### 设计系统
+
+详细的设计规范请参考：
+- **设计规范文档**：`.cursor/rules/designrule/RULE.md`
+- **组件开发规范**：`.cursor/rules/component-development.md`
+
+### 核心设计原则
+
+1. **颜色系统**
+   - 品牌色：`#2B7FFF`
+   - 使用 Tailwind 类名或 CSS 变量，禁止硬编码颜色值
+
+2. **间距系统**
+   - 预定义间距：`xxs` (4px), `xs` (8px), `sm` (12px), `md` (16px), `lg` (20px), `xl` (24px), `xxl` (32px), `xxxl` (40px)
+   - 禁止使用非标准间距值
+
+3. **圆角系统**
+   - 预定义圆角：`xs` (4px), `sm` (6px), `md` (8px), `lg` (12px), `xl` (16px)
+
+4. **文字系统**
+   - `.text-title` - 页面标题（20px/28px, 600）
+   - `.text-section` - 区块标题（16px/24px, 500）
+   - `.text-body` - 正文（14px/22px, 400）
+   - `.text-caption` - 辅助文字（12px/18px, 400）
+
+5. **响应式设计**
+   - 移动端优先
+   - 断点：`sm: 640px`, `md: 768px`, `lg: 1024px`
+
+### 开发要求
+
+#### ✅ 必须遵循
+
+- 使用设计规范中定义的颜色系统
+- 使用预定义的间距和圆角值
+- 使用预定义的文字样式类
+- 优先使用现有的公共组件
+- 支持响应式设计
+
+#### ❌ 禁止事项
+
+- 禁止硬编码颜色值
+- 禁止使用非标准间距
+- 禁止创建新的颜色变体
+- 禁止绕过公共组件
+
+## 📦 核心组件
+
+### UI 基础组件
+
+- **Button** - 按钮组件
+- **Card** - 卡片容器
+- **Input** - 输入框
+- **TextArea** - 文本域
+- **Select** - 选择器
+- **Modal** - 模态框
+- **DataTable** - 数据表格
+- **FormItem** - 表单项
+- **RichTextEditor** - 富文本编辑器
+- **ImageSelector** - 图片选择器
+- **EditorLayout** - 编辑器布局
+- **EditorStatusBar** - 编辑器状态栏
+- **FloatingActionBar** - 浮动操作栏
+
+### 功能组件
+
+- **HistoryModal** - 历史记录弹窗
+- **UnifiedHistoryModal** - 统一历史记录弹窗
+- **UnsavedChangesModal** - 未保存修改提醒
+- **UserMenu** - 用户菜单
+- **UserProfileDrawer** - 用户资料抽屉
+- **PreviewContent** - 预览内容组件
+
+## 🔧 开发指南
+
+### 创建新组件
+
+1. 检查是否已有类似功能的公共组件
+2. 查看设计规范文档
+3. 参考现有组件的实现方式
+4. 遵循组件开发规范
+
+### 创建新编辑器
+
+1. 在 `src/components/editors/` 目录下创建新文件
+2. 参考现有编辑器组件的实现
+3. 使用 `EditorLayout` 作为布局容器
+4. 使用 `EditorStatusBar` 显示保存/发布状态
+5. 在 `src/App.jsx` 中注册新编辑器
+
+### 状态管理
+
+- 使用 React Hooks (`useState`, `useContext`) 进行状态管理
+- 全局状态通过 Context API 管理（如 `UnsavedChangesContext`）
+- 页面级状态在组件内部管理
+
+### 数据持久化
+
+- 当前版本使用本地状态管理（`useState`）
+- 生产环境需要对接后端 API
+- 数据保存在 `src/constants/initialData.js` 中
+
+## 📝 使用说明
+
+详细的使用说明请参考：
+- **产品使用说明书**：`docs/产品使用说明书.md`
+
+### 核心概念
+
+- **保存配置**：内容保存在后台，不会显示在官网
+- **发布更新**：内容会显示在官网，访客可以看到
+- **历史记录**：可以查看和恢复历史版本
+
+### 快速操作流程
+
+1. **修改页面内容**：编辑 → 保存配置 → 发布更新
+2. **新增文章/项目**：新增 → 填写信息 → 保存 → 在列表中点击"发布"
+3. **修改已有内容**：编辑 → 修改内容 → 保存 → 如已发布，点击"同步"更新到官网
+
+## 🐛 常见问题
+
+### Q: 为什么修改了内容，官网看不到？
+
+A: 修改后需要点击"发布更新"，内容才会显示在官网。只点击"保存配置"不会显示。
+
+### Q: 保存和发布有什么区别？
+
+A: 
+- **保存配置**：内容保存在后台，官网看不到
+- **发布更新**：内容发布到官网，访客可以看到
+
+### Q: 如何恢复历史版本？
+
+A: 打开历史记录，找到要恢复的版本，点击"恢复此版本"，然后重新保存和发布。
+
+## 📄 许可证
+
+本项目为私有项目，未经授权不得使用。
+
+## 👥 贡献
+
+本项目为内部项目，如有问题或建议，请联系项目维护团队。
+
+## 📞 联系方式
+
+如有疑问，请联系技术支持。
+
+---
+
+**注意**：本项目仍在持续开发中，部分功能可能尚未完善。使用前请仔细阅读相关文档。
