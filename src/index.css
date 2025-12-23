@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   CMS 系统 · 完整设计系统 CSS 变量
+   基于主色 #2B7FFF
+======================================== */
+
+:root {
+  /* ==========================================
+     字体系统 Typography System
+  ========================================== */
+  
+  /* 字体家族 Font Family - 思源黑体 */
+  --font-family-base: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+
+  /* 字号 Font Size */
+  --font-size-xl: 20px;   /* 页面标题 */
+  --font-size-lg: 16px;   /* 区块标题 */
+  --font-size-md: 14px;   /* 正文 */
+  --font-size-sm: 12px;   /* 辅助文字 */
+
+  /* 行高 Line Height */
+  --line-height-xl: 28px;
+  --line-height-lg: 24px;
+  --line-height-md: 22px;
+  --line-height-sm: 18px;
+
+  /* 字重 Font Weight */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  /* 文本颜色 Text Colors */
+  --text-primary: #1A1A1A;     /* 标题、主内容 */
+  --text-regular: #333333;     /* 正文普通文本 */
+  --text-secondary: #666666;   /* 次要信息 */
+  --text-placeholder: #999999; /* 占位文字 */
+  --text-disabled: #C2C2C2;    /* 禁用状态 */
+
+  /* 语义文本色 Semantic Text Colors */
+  --text-link: #2B7FFF;
+  --text-success: #27C652;
+  --text-warning: #FAAD14;
+  --text-error: #FF4D4F;
+
+  /* ==========================================
+     间距系统 Spacing System
+  ========================================== */
+  --space-xxs: 4px;   /* 图标间距、tag */
+  --space-xs: 8px;    /* 小组件内边距 */
+  --space-sm: 12px;   /* 表格、小表单间距 */
+  --space-md: 16px;   /* 常规内容间距（最常用） */
+  --space-lg: 20px;   /* 卡片内部 padding */
+  --space-xl: 24px;   /* 页面内边距（常用） */
+  --space-xxl: 32px;  /* 区块分隔、上方空白 */
+  --space-xxxl: 40px; /* Banner、大块视觉区 */
+
+  /* ==========================================
+     圆角系统 Radius System
+  ========================================== */
+  --radius-xs: 4px;   /* icon 背景、小标签 */
+  --radius-sm: 6px;   /* 输入框、按钮 */
+  --radius-md: 8px;   /* 卡片、表格容器（推荐） */
+  --radius-lg: 12px;  /* 弹窗、较大块内容 */
+  --radius-xl: 16px;  /* 登录框、Banner 卡片 */
+
+  /* ==========================================
+     颜色系统 Color System
+  ========================================== */
+
+  /* 品牌色 Brand Colors */
+  --color-brand: #2B7FFF;
+  --color-brand-hover: #589AFF;
+  --color-brand-active: #1F6DDB;
+  --color-brand-light: #E6F1FF;
+
+  /* 成功色 Success */
+  --color-success: #27C46A;
+  --color-success-hover: #44D589;
+  --color-success-light: #E8FFF3;
+
+  /* 警告色 Warning */
+  --color-warning: #FFB020;
+  --color-warning-hover: #FFC348;
+  --color-warning-light: #FFF7E8;
+
+  /* 错误色 Error */
+  --color-error: #FF4D4F;
+  --color-error-hover: #FF6B6D;
+  --color-error-light: #FFECEC;
+
+  /* 信息色 Info (复用主色) */
+  --color-info: #2B7FFF;
+  --color-info-light: #E6F1FF;
+
+  /* 辅助色 Auxiliary */
+  --color-highlight-blue: #5EA8FF;
+  --color-light-blue: #A5CDFF;
+  --color-indigo: #204ECF;
+  --color-cyan: #34D5FF;
+
+  /* 中性色 Neutrals */
+  --color-gray-1: #FFFFFF;
+  --color-gray-2: #FAFAFA;
+  --color-gray-3: #F5F7FA;
+  --color-gray-4: #E6E8EB;
+  --color-gray-5: #CBD0D6;
+  --color-gray-6: #8A9099;
+  --color-gray-7: #4B4F55;
+  --color-gray-8: #1C1F23;
+
+  /* 阴影 Shadows */
+  --shadow-base: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-light: 0 2px 6px rgba(0, 0, 0, 0.05);
+  --shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+  /* 边框 Borders */
+  --border-light: #E6E8EB;
+  --border-strong: #CBD0D6;
+}
+
+/* ==========================================
+   基础样式 Base Styles
+========================================== */
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-md);
+  color: var(--text-regular);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 修复下拉列表样式 */
+select {
+  font-family: var(--font-family-base);
+  background-color: white !important;
+  color: var(--text-primary) !important;
+}
+
+select option {
+  background-color: white !important;
+  color: var(--text-primary) !important;
+}
+
+/* 输入框字体 */
+input, textarea {
+  font-family: var(--font-family-base);
+}
+
+/* 按钮字体 */
+button {
+  font-family: var(--font-family-base);
+}
+
+/* ==========================================
+   滚动条样式 Scrollbar
+========================================== */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-gray-2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gray-5);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-6);
+}
+
+/* ==========================================
+   字体工具类 Typography Utilities
+========================================== */
+
+@layer utilities {
+  /* 呼吸动画 - 用于未保存状态的保存按钮 */
+  @keyframes breathe {
+    0%, 100% {
+      opacity: 1;
+      box-shadow: 0 0 0 0 rgba(43, 127, 255, 0.4);
+    }
+    50% {
+      opacity: 0.85;
+      box-shadow: 0 0 0 8px rgba(43, 127, 255, 0);
+    }
+  }
+  
+  .animate-breathe {
+    animation: breathe 2s ease-in-out infinite;
+  }
+
+  /* 页面标题 Page Title - 不含颜色，颜色单独控制 */
+  .text-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-xl);
+  }
+
+  /* 区块标题 Section Title */
+  .text-section {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-lg);
+  }
+
+  /* 正文 Body Text */
+  .text-body {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-md);
+  }
+
+  /* 辅助文字 Caption */
+  .text-caption {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-sm);
+  }
+
+  /* 次要文字 Secondary */
+  .text-secondary {
+    color: var(--text-secondary);
+  }
+
+  /* 禁用文字 Disabled */
+  .text-disabled {
+    color: var(--text-disabled);
+  }
+
+  /* 链接文字 Link */
+  .text-link {
+    color: var(--text-link);
+  }
+}
